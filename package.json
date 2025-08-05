@@ -1,5 +1,5 @@
 {
-  "name": "documentation",
+  "name": "sowonai.com",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -8,9 +8,9 @@
     "clear": "docusaurus clear",
     "deploy": "docusaurus deploy",
     "dev": "docusaurus start",
-    "dev:blog": "cross-env DISABLE_DOCS=true pnpm run dev:lean",
-    "dev:docs": "cross-env DISABLE_BLOG=true pnpm run dev:lean",
-    "dev:lean": "cross-env DISABLE_DOCGEN=true DISABLE_VERSIONING=true DISABLE_EXAMPLES=true DISABLE_CHECKLISTS=true LIVE_PREVIEW_URL=https://cloud2.refine.dev/.refine/preview pnpm run dev",
+    "dev:blog": "cross-env DISABLE_DOCS=true npm run dev:lean",
+    "dev:docs": "cross-env DISABLE_BLOG=true npm run dev:lean",
+    "dev:lean": "cross-env DISABLE_DOCGEN=true DISABLE_VERSIONING=true DISABLE_EXAMPLES=true DISABLE_CHECKLISTS=true LIVE_PREVIEW_URL=https://cloud2.refine.dev/.refine/preview npm run dev",
     "docusaurus": "docusaurus",
     "serve": "docusaurus serve",
     "swizzle": "docusaurus swizzle",
@@ -106,9 +106,7 @@
     "typescript": "^5.4.2",
     "unist-util-visit": "^2.0.3"
   },
-  "packageManager": "pnpm@9.1.2+sha256.19c17528f9ca20bd442e4ca42f00f1b9808a9cb419383cd04ba32ef19322aba7",
   "engines": {
-    "node": ">=18",
-    "pnpm": ">=9"
+    "node": ">=20"
   }
 }
