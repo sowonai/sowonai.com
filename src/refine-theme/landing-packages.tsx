@@ -58,7 +58,7 @@ export const LandingPackages: FC<Props> = ({ className }) => {
             "dark:text-gray-0 text-gray-900",
           )}
         >
-          Start{" "}
+          아, 이렇게{" "}
           <span
             className={clsx(
               "font-semibold",
@@ -66,9 +66,9 @@ export const LandingPackages: FC<Props> = ({ className }) => {
               "text-refine-blue drop-shadow-[0_0_30px_rgba(0,128,255,0.3)]",
             )}
           >
-            faster
+            간단하게
           </span>
-          , maintain{" "}
+          {" "}되는구나 🛠️{" "}
           <span
             className={clsx(
               "font-semibold",
@@ -76,9 +76,9 @@ export const LandingPackages: FC<Props> = ({ className }) => {
               "text-refine-indigo drop-shadow-[0_0_30px_rgba(51,51,255,0.3)]",
             )}
           >
-            easier
+            YAML + AI
           </span>
-          , manage{" "}
+          {" "}로{" "}
           <span
             className={clsx(
               "font-semibold",
@@ -86,9 +86,9 @@ export const LandingPackages: FC<Props> = ({ className }) => {
               "text-refine-purple drop-shadow-[0_0_30px_rgba(128,0,255,0.3)]",
             )}
           >
-            complexity
+            5분 만에
           </span>
-          .
+          {" "}완성.
         </h2>
       </div>
 

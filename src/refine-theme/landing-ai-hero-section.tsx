@@ -33,7 +33,7 @@ export const LandingAiHeroSection = ({ className }: { className?: string }) => {
             "text-gray-600",
           )}
         >
-          다른 회사들은 이미 시작했습니다.
+          세상에... 다른 회사들은 이미 이렇게 쓰고 있구나 💥
         </h2>
         <h2
           className={clsx(
@@ -46,12 +46,12 @@ export const LandingAiHeroSection = ({ className }: { className?: string }) => {
             "text-gray-900",
           )}
         >
-          당신도 AI 팀을 직접 만드세요!
+          Build your AI team yourself
         </h2>
 
         <p className={clsx("max-w-[446px]", "text-gray-900", "mt-4")}>
-          슬랙에서 바로 사용하는 AI 어시스턴트부터 복잡한 워크플로우까지,
-          개발자 없이도 5분 만에 AI 팀을 구축할 수 있습니다.
+          🚀 매출분석도 AI가, 📅 일정관리도 AI가, 📧 메일처리도 AI가!<br/>
+          슬랙에서 바로 사용하는 실제 AI 업무 시나리오를 확인해보세요.
         </p>        <div
           className={clsx(
             "flex",

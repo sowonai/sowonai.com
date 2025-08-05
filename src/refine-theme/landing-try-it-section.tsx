@@ -90,7 +90,7 @@ export const LandingTryItSection = ({ className }: { className?: string }) => {
             "text-gray-900 dark:text-gray-0",
           )}
         >
-          Get started now!
+          지금 바로 시작해보세요! 🚀
         </h2>
         <p
           className={clsx(
@@ -100,8 +100,8 @@ export const LandingTryItSection = ({ className }: { className?: string }) => {
             "landing-sm:max-w-[446px]",
           )}
         >
-          Choose your way to scaffold your project and start developing in
-          seconds.
+          원하는 방식으로 AI 팀 구축을 시작하고, 
+          몇 초 만에 첫 번째 AI 에이전트를 만나보세요.
         </p>
       </div>
       <div

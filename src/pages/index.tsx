@@ -16,6 +16,8 @@ import { LandingTryItSection } from "../refine-theme/landing-try-it-section";
 import { CommonHeader } from "../refine-theme/common-header";
 import { LandingTestimonial } from "../refine-theme/landing-testimonial";
 import { LandingAiHeroSection } from "../refine-theme/landing-ai-hero-section";
+import { LandingSlackDemoScenarios } from "../refine-theme/landing-slack-demo-scenarios";
+import { LandingYamlWorkflowBuilder } from "../refine-theme/landing-yaml-workflow-builder";
 
 function Home() {
   const title = "SowonAI | Build your AI team yourself";
@@ -25,14 +27,14 @@ function Home() {
         <html data-active-page="index" />
         <title>{title}</title>
         <meta property="og:title" content={title} />
-        <meta property="og:description" content="AI를 어려워하는 사람들에게 슈퍼파워를 제공합니다. 개발자 없이도 직접 AI 팀을 구축하고 업무를 자동화하세요." />
+        <meta property="og:description" content="세상에... 다른 회사들은 이미 이렇게 쓰고 있구나! AI를 어려워하는 사람들에게 슈퍼파워를 제공합니다. 개발자 없이도 5분 만에 AI 팀을 구축하고 업무를 자동화하세요. Build your AI team yourself." />
         <link
           rel="preload"
           href="https://sowonai.com/embed-form"
           as="document"
         />
       </Head>
-      <CommonLayout description="AI를 어려워하는 사람들에게 슈퍼파워를 제공합니다. 개발자 없이도 직접 AI 팀을 구축하고 업무를 자동화하세요.">
+      <CommonLayout description="세상에... 다른 회사들은 이미 이렇게 쓰고 있구나! AI를 어려워하는 사람들에게 슈퍼파워를 제공합니다. 개발자 없이도 5분 만에 AI 팀을 구축하고 업무를 자동화하세요. Build your AI team yourself.">
         <div className={clsx()}>
           <CommonHeader />
           <div
@@ -49,6 +51,9 @@ function Home() {
               className={clsx("mt-0", "landing-sm:mt-8", "landing-lg:mt-20")}
             >
               <LandingAiHeroSection />
+              <LandingSlackDemoScenarios 
+                className={clsx("mt-12", "landing-sm:mt-20", "landing-md:mt-28")} 
+              />
               <LandingHeroSection className={clsx("mt-8")} />
               <LandingTrustedByDevelopers
                 className={clsx(
@@ -60,6 +65,9 @@ function Home() {
               />
             </div>
             <LandingSweetSpot />
+            <LandingYamlWorkflowBuilder 
+              className={clsx("mt-12", "landing-sm:mt-20", "landing-md:mt-28")} 
+            />
             <div className={clsx("flex flex-col", "gap-12 landing-md:gap-6")}>
               <LandingPackages />
               <div

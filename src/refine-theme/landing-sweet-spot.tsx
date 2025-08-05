@@ -57,7 +57,7 @@ export const LandingSweetSpot: FC<Props> = ({ className }) => {
             "dark:text-gray-0 text-gray-900",
           )}
         >
-          기술적 장벽 없이{" "}
+          어? 우리도 할 수 있는 거야? ✨{" "}
           <span
             className={clsx(
               "font-semibold",
@@ -65,9 +65,9 @@ export const LandingSweetSpot: FC<Props> = ({ className }) => {
               "text-refine-indigo drop-shadow-[0_0_30px_rgba(51,51,255,0.3)]",
             )}
           >
-            AI 슈퍼파워
+            개발팀 고용 vs 직접 구축
           </span>{" "}
-          를 획득하세요.
+          비교해보세요.
         </h2>
         <p
           className={clsx(
@@ -77,8 +77,9 @@ export const LandingSweetSpot: FC<Props> = ({ className }) => {
             "dark:text-gray-400 text-gray-600",
           )}
         >
-          복잡한 개발 없이도 강력한 AI 시스템을 구축할 수 있습니다. 
-          SowonAI는 간단한 시작과 무한한 확장성을 동시에 제공합니다.
+          💪 자신감을 주는 임파워먼트 메시지: 비개발자도 쉽게 시작할 수 있습니다.<br/>
+          💰 Before: 개발팀 채용 → 개발 → 배포 (6개월+)<br/>
+          ⚡ After: SowonAI로 직접 구축 (5분)
         </p>
       </div>
 
