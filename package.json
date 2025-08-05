@@ -29,8 +29,8 @@
     ]
   },
   "dependencies": {
-    "@codesandbox/sandpack-react": "^2.13.8",
-    "@codesandbox/sandpack-themes": "^2.0.21",
+    "@codesandbox/sandpack-react": "^1.20.9",
+    "@codesandbox/sandpack-themes": "^1.19.0",
     "@docsearch/react": "^3.5.2",
     "@docusaurus/core": "2.4.0",
     "@docusaurus/plugin-client-redirects": "2.4.0",
