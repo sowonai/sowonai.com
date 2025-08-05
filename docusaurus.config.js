@@ -15,10 +15,10 @@ const thumbsUpDownFeedbackWidget = require("./plugins/thumbs-up-down-feedback-wi
 const siteConfig = {
   title: "Refine",
   tagline: "Build your React-based CRUD applications, without constraints",
-  url: "https://refine.dev",
+  url: "https://www.sowonai.com",
   baseUrl: "/",
-  projectName: "refine",
-  organizationName: "refinedev",
+  projectName: "sowonai.com",
+  organizationName: "sowonai",
   trailingSlash: true,
   favicon: "img/favicon.ico",
   scripts: [
