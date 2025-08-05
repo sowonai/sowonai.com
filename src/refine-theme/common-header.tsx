@@ -5,7 +5,6 @@ import React, { useState } from "react";
 
 import { HamburgerIcon } from "./icons/hamburger";
 
-import { openFigma } from "../utils/open-figma";
 import { Menu } from "./common-header/menu";
 import { MobileMenuModal } from "./common-header/mobile-menu-modal";
 import { CommonThemeToggle } from "./common-theme-toggle";
@@ -81,7 +80,7 @@ export const CommonHeader = ({
             )}
           >
             <div className={clsx("w-[130px]", "landing-lg:w-[200px]")}>
-              <Link to="/" onContextMenu={openFigma}>
+              <Link to="/">
                 <RefineLogoIcon className="text-gray-900 dark:text-gray-0" />
               </Link>
             </div>

@@ -20,7 +20,7 @@ const siteConfig = {
   projectName: "sowonai.com",
   organizationName: "sowonai",
   trailingSlash: true,
-  favicon: "img/favicon.ico",
+  favicon: "img/LogoIcon2.ico",
   scripts: [
     "https://platform.twitter.com/widgets.js",
     {
@@ -251,8 +251,8 @@ const siteConfig = {
     ],
     navbar: {
       logo: {
-        alt: "refine",
-        src: "img/refine_logo.png",
+        alt: "sowonai",
+        src: "img/LogoIcon2.png",
       },
       items: [
         { to: "blog", label: "Blog", position: "left" },
@@ -280,8 +280,8 @@ const siteConfig = {
     },
     footer: {
       logo: {
-        alt: "refine",
-        src: "/img/refine_logo.png",
+        alt: "sowonai",
+        src: "/img/LogoIcon2.png",
       },
       links: [
         {
