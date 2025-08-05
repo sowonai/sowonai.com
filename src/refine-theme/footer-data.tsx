@@ -4,6 +4,7 @@ import { FooterGithubIcon } from "./icons/footer-github";
 import { FooterLinkedinIcon } from "./icons/footer-linkedin";
 import { FooterRedditIcon } from "./icons/footer-reddit";
 import { FooterTwitterIcon } from "./icons/footer-twitter";
+import { FooterThreadsIcon } from "./icons/footer-threads";
 import { NewBadgeIcon } from "./icons/popover";
 
 export const menuItems = [
@@ -107,22 +108,22 @@ export const footerDescription =
 export const socialLinks = [
   {
     icon: FooterGithubIcon,
-    href: "https://github.com/refinedev/refine",
+    href: "https://github.com/sowonai/sowonflow-examples",
   },
-  {
-    icon: FooterDiscordIcon,
-    href: "https://discord.gg/refine",
-  },
-  {
-    icon: FooterRedditIcon,
-    href: "https://www.reddit.com/r/refine/",
-  },
+  // {
+  //   icon: FooterDiscordIcon,
+  //   href: "https://discord.gg/refine",
+  // },
+  // {
+  //   icon: FooterRedditIcon,
+  //   href: "https://www.reddit.com/r/refine/",
+  // },
   {
     icon: FooterTwitterIcon,
-    href: "https://x.com/refine_dev",
+    href: "https://x.com/dohapark81",
   },
   {
-    icon: FooterLinkedinIcon,
-    href: "https://www.linkedin.com/company/refine-dev",
+    icon: FooterThreadsIcon,
+    href: "https://www.threads.com/@sowonlabs",
   },
 ];

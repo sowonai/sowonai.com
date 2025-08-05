@@ -8,39 +8,89 @@ type Props = {
 const buildingSteps = [
   {
     step: 1,
-    title: "워크플로우 설계",
-    description: "간단한 YAML로 AI 에이전트 동작 정의",
-    code: `# 매출분석 에이전트
-name: sales-analyzer
-trigger: mention
-tasks:
-  - fetch_sales_data
-  - analyze_trends
-  - generate_report`,
-    time: "1분",
+    title: "YAML로 AI 에이전트 정의",
+    description: "비즈니스 팀도 쉽게 이해할 수 있는 인간 친화적 YAML 설정",
+    code: `# SowonFlow YAML 워크플로우
+version: "agentflow/v1"
+kind: "WorkflowSpec"
+metadata:
+  name: "매출분석 에이전트"
+  description: "AI 기반 매출 데이터 분석 및 리포트 생성"
+
+agents:
+  - id: "sales_analyzer"
+    inline:
+      type: "agent"
+      model: "openai/gpt-4-turbo"
+      system_prompt: |
+        당신은 매출분석 전문가입니다.
+        데이터를 분석하고 명확한 인사이트를 제공하세요.
+      tools: ["calculator", "current_time"]`,
+    time: "2분",
+    feature: "🎯 직관적인 YAML 설정으로 누구나 AI 에이전트 정의 가능"
   },
   {
     step: 2,
-    title: "AI 모델 연결",
-    description: "GPT-4, Claude 등 원하는 AI 모델 선택",
-    code: `models:
-  - gpt-4-turbo
-  - claude-3-opus
-tools:
-  - data_analysis
-  - chart_generation`,
-    time: "30초",
+    title: "멀티 AI 모델 & MCP 연동",
+    description: "GPT-4, Claude, Gemini 등 다양한 AI 모델과 외부 시스템 연결",
+    code: `# 다양한 AI 모델 지원
+agents:
+  - id: "supervisor"
+    inline:
+      type: "supervisor"
+      model: "anthropic/claude-sonnet-4"
+      supervisor_mode: "parallel"
+      agents: ["gpt_agent", "gemini_agent"]
+      
+  - id: "email_agent"
+    inline:
+      model: "google/gemini-2.5-flash"
+      mcp: ["gmail", "slack", "database"]
+      # MCP로 Gmail, Slack, DB 연동`,
+    time: "1분",
+    feature: "🔗 MCP(Model Context Protocol)로 기존 시스템과 완벽 연동"
   },
   {
     step: 3,
-    title: "슬랙 배포",
-    description: "원클릭으로 슬랙 워크스페이스에 배포",
-    code: `deployment:
-  platform: slack
-  workspace: your-company
-  channels: [#sales, #analytics]
-  auto_deploy: true`,
+    title: "문서 기반 지식 주입",
+    description: "회사 문서, 매뉴얼, 정책을 AI에게 학습시켜 도메인 전문성 확보",
+    code: `# 문서 시스템으로 AI 전문성 강화
+agents:
+  - id: "legal_expert"
+    system_prompt: |
+      회사 정책을 기반으로 법적 검토를 수행하세요.
+      
+      <document name="회사 규정">
+        {{{documents.company_policy.content}}}
+      </document>
+      
+      <document name="계약서 템플릿">  
+        {{{documents.contract_template.content}}}
+      </document>`,
     time: "30초",
+    feature: "📚 문서 시스템으로 회사 지식을 AI에게 직접 주입"
+  },
+  {
+    step: 4,
+    title: "슬랙/실제 환경 배포",
+    description: "원클릭으로 슬랙 워크스페이스나 실제 업무 환경에 즉시 배포",
+    code: `# 실제 환경 배포 설정
+deployment:
+  platform: "slack"
+  workspace: "your-company"
+  channels: ["#sales", "#analytics"]
+  
+mcpServers:
+  gmail:
+    command: "npx"
+    args: ["-y", "@sowonai/mcp-gmail"]
+    env:
+      GOOGLE_CLIENT_ID: "your_client_id"
+      
+# 바로 사용 가능!
+# @SowonAI 매출분석해줘`,
+    time: "1분",
+    feature: "🚀 실제 업무 환경에 바로 배포하여 즉시 사용 가능"
   },
 ];
 
@@ -84,7 +134,11 @@ export const LandingYamlWorkflowBuilder: FC<Props> = ({ className }) => {
             "mb-8",
           )}
         >
-          5분 만에 AI 에이전트 만들기 🛠️
+          아, 이렇게 간단하게 되는구나! 🛠️
+          <br />
+          <span className={clsx("text-lg landing-sm:text-xl text-gray-600 dark:text-gray-400 font-normal")}>
+            SowonFlow: 비즈니스 팀도 쉽게 만드는 AI 워크플로우
+          </span>
         </h2>
         
         <div className={clsx("bg-gray-50 dark:bg-gray-800 rounded-2xl p-6")}>
@@ -126,6 +180,12 @@ export const LandingYamlWorkflowBuilder: FC<Props> = ({ className }) => {
                 <p className={clsx("text-gray-600 dark:text-gray-400 mt-1")}>
                   {buildingSteps[currentStep].description}
                 </p>
+                {/* SowonFlow 특징 */}
+                <div className={clsx("mt-2 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-2")}>
+                  <div className={clsx("text-blue-800 dark:text-blue-300 text-sm font-medium")}>
+                    {buildingSteps[currentStep].feature}
+                  </div>
+                </div>
               </div>
               <div className={clsx("bg-green-100 dark:bg-green-900/20 px-3 py-1 rounded-full text-green-800 dark:text-green-300 text-sm font-medium")}>
                 소요시간: {buildingSteps[currentStep].time}
@@ -138,25 +198,26 @@ export const LandingYamlWorkflowBuilder: FC<Props> = ({ className }) => {
                 <div className="w-3 h-3 rounded-full bg-red-500"></div>
                 <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
                 <div className="w-3 h-3 rounded-full bg-green-500"></div>
-                <span className={clsx("text-gray-400 ml-4")}>workflow.yaml</span>
+                <span className={clsx("text-gray-400 ml-4")}>sowonflow-workflow.yaml</span>
               </div>
               <pre className={clsx("text-green-400")}>
                 {buildingSteps[currentStep].code}
               </pre>
             </div>
 
-            {/* AI 어시스턴트 도움말 */}
+            {/* SowonFlow 어시스턴트 도움말 */}
             <div className={clsx("mt-4 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-3")}>
               <div className={clsx("flex items-start gap-2")}>
                 <span className="text-blue-600 dark:text-blue-400">🤖</span>
                 <div>
                   <div className={clsx("text-blue-800 dark:text-blue-300 font-medium text-sm")}>
-                    SowonAI 어시스턴트
+                    SowonFlow 어시스턴트
                   </div>
                   <div className={clsx("text-blue-700 dark:text-blue-400 text-sm mt-1")}>
-                    {currentStep === 0 && "YAML 문법이 익숙하지 않으세요? 제가 자동으로 생성해드릴게요!"}
-                    {currentStep === 1 && "어떤 AI 모델이 좋을지 모르겠다면, 업무 유형에 맞는 모델을 추천해드려요."}
-                    {currentStep === 2 && "배포 설정도 복잡하지 않아요. 클릭 몇 번이면 완료됩니다!"}
+                    {currentStep === 0 && "YAML이 처음이세요? 걱정 마세요! 비즈니스 팀도 쉽게 작성할 수 있도록 설계되었어요."}
+                    {currentStep === 1 && "여러 AI 모델을 동시에 사용하거나, Gmail/Slack 같은 기존 도구와 연결할 수 있어요."}
+                    {currentStep === 2 && "회사 문서를 업로드하면 AI가 자동으로 학습해서 전문가가 되어요!"}
+                    {currentStep === 3 && "실제 슬랙에서 @SowonAI로 바로 사용할 수 있어요. 개발자 도움 없이도요!"}
                   </div>
                 </div>
               </div>
@@ -173,12 +234,12 @@ export const LandingYamlWorkflowBuilder: FC<Props> = ({ className }) => {
                   "hover:bg-refine-indigo/90 transition-colors"
                 )}
               >
-                🚀 5분 구축 과정 시작하기
+                🚀 SowonFlow로 AI 워크플로우 구축해보기
               </button>
             ) : (
               <div className={clsx("flex items-center gap-2 text-refine-indigo")}>
                 <div className="animate-spin w-5 h-5 border-2 border-refine-indigo border-t-transparent rounded-full"></div>
-                구축 중... ({currentStep + 1}/{buildingSteps.length})
+                SowonFlow 워크플로우 구축 중... ({currentStep + 1}/{buildingSteps.length})
               </div>
             )}
             
@@ -200,10 +261,11 @@ export const LandingYamlWorkflowBuilder: FC<Props> = ({ className }) => {
             <div className={clsx("mt-6 text-center")}>
               <div className={clsx("text-2xl mb-2")}>🎉</div>
               <p className={clsx("text-gray-900 dark:text-gray-100 font-medium")}>
-                축하합니다! AI 에이전트가 성공적으로 배포되었습니다.
+                축하합니다! SowonFlow AI 워크플로우가 성공적으로 배포되었습니다.
               </p>
               <p className={clsx("text-gray-600 dark:text-gray-400 text-sm mt-1")}>
-                이제 슬랙에서 @SowonAI를 멘션해서 사용해보세요!
+                이제 슬랙에서 @SowonAI를 멘션해서 바로 사용해보세요!<br/>
+                🎯 비즈니스 로직에 집중하고, 복잡한 AI 구현은 SowonFlow가 담당합니다.
               </p>
             </div>
           )}

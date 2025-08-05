@@ -18,6 +18,7 @@ import { LandingTestimonial } from "../refine-theme/landing-testimonial";
 import { LandingAiHeroSection } from "../refine-theme/landing-ai-hero-section";
 import { LandingSlackDemoScenarios } from "../refine-theme/landing-slack-demo-scenarios";
 import { LandingYamlWorkflowBuilder } from "../refine-theme/landing-yaml-workflow-builder";
+import { LandingSowonFlowFeatures } from "../refine-theme/landing-sowonflow-features";
 
 function Home() {
   const title = "SowonAI | Build your AI team yourself";
@@ -66,6 +67,9 @@ function Home() {
             </div>
             <LandingSweetSpot />
             <LandingYamlWorkflowBuilder 
+              className={clsx("mt-12", "landing-sm:mt-20", "landing-md:mt-28")} 
+            />
+            <LandingSowonFlowFeatures 
               className={clsx("mt-12", "landing-sm:mt-20", "landing-md:mt-28")} 
             />
             <div className={clsx("flex flex-col", "gap-12 landing-md:gap-6")}>

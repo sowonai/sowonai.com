@@ -31,7 +31,7 @@ export const LandingFooter = ({ variant = "landing" }: Props) => {
           variant === "blog" && "text-refine-react-8 dark:text-refine-react-3",
         )}
       >
-        Refine Development Inc.
+        SowonLabs
       </div>
       <div
         className={clsx(
@@ -42,10 +42,10 @@ export const LandingFooter = ({ variant = "landing" }: Props) => {
           variant === "blog" && "text-refine-react-5 dark:text-refine-react-4",
         )}
       >
-        256 Chapman Road STE 105-4 Newark, DE 19702
+        240, Hyohaeng-ro, Bongdam-eup, Hwaseong-si, Gyeonggi-do, Republic of Korea
       </div>
       <a
-        href="mailto:info@refine.dev"
+        href="mailto:support@sowonai.com"
         className={clsx(
           "font-normal",
           "text-sm",
@@ -56,7 +56,7 @@ export const LandingFooter = ({ variant = "landing" }: Props) => {
           "hover:no-underline",
         )}
       >
-        info@refine.dev
+        support@sowonai.com
       </a>
     </div>
   );
@@ -158,7 +158,7 @@ export const LandingFooter = ({ variant = "landing" }: Props) => {
             >
               <RefineLogoSingleIcon />
             </Link>
-            <a
+            {/* <a
               href="https://www.producthunt.com/posts/refine-3?utm_source=badge-top-post-badge&utm_medium=badge&utm_souce=badge-refine&#0045;3"
               target="_blank"
               rel="noreferrer"
@@ -173,7 +173,7 @@ export const LandingFooter = ({ variant = "landing" }: Props) => {
                     "fill-refine-react-2 dark:fill-refine-react-7",
                 )}
               />
-            </a>
+            </a> */}
           </div>
           <div
             className={clsx(
@@ -334,7 +334,7 @@ export const LandingFooter = ({ variant = "landing" }: Props) => {
               "font-normal",
             )}
           >
-            {"© 2025, Refine from San Francisco to wherever you're with "}
+            {"© 2025, SowonLabs Inc. All rights reserved."}
             <HeartOutlinedIcon
               className={clsx("ml-1", "text-refine-red", "inline", "leading-5")}
             />
