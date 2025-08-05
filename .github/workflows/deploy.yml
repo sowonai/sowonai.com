@@ -42,9 +42,17 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Clean install dependencies
+      - name: Complete clean install
         run: |
-          rm -rf node_modules package-lock.json
+          # 모든 캐시와 파일들 완전 삭제
+          rm -rf node_modules
+          rm -rf package-lock.json
+          rm -rf .docusaurus
+          rm -rf build
+          rm -rf temp_drafts
+          # npm 캐시도 클리어
+          npm cache clean --force
+          # 새로 설치
           npm install
 
       - name: Clear Docusaurus cache
