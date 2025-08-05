@@ -33,7 +33,7 @@ export const LandingAiHeroSection = ({ className }: { className?: string }) => {
             "text-gray-600",
           )}
         >
-          The wait is over.
+          다른 회사들은 이미 시작했습니다.
         </h2>
         <h2
           className={clsx(
@@ -46,15 +46,13 @@ export const LandingAiHeroSection = ({ className }: { className?: string }) => {
             "text-gray-900",
           )}
         >
-          Refine AI is here!
+          당신도 AI 팀을 직접 만드세요!
         </h2>
 
         <p className={clsx("max-w-[446px]", "text-gray-900", "mt-4")}>
-          Instantly transform your APIs into enterprise-grade admin panels,
-          dashboards & internal tools.
-        </p>
-
-        <div
+          슬랙에서 바로 사용하는 AI 어시스턴트부터 복잡한 워크플로우까지,
+          개발자 없이도 5분 만에 AI 팀을 구축할 수 있습니다.
+        </p>        <div
           className={clsx(
             "flex",
             "items-center",
@@ -65,7 +63,7 @@ export const LandingAiHeroSection = ({ className }: { className?: string }) => {
           )}
         >
           <a
-            href="https://s.refine.dev/ai-banner"
+            href="https://slack.sowonai.com"
             target="_blank"
             rel="noreferrer"
             className={clsx(
@@ -80,13 +78,13 @@ export const LandingAiHeroSection = ({ className }: { className?: string }) => {
               "z-[4]",
             )}
           >
-            Start for free!
+            슬랙에서 시작하기
           </a>
           <Link
-            to="/ai"
+            to="/docs"
             className={clsx("text-refine-indigo", "underline", "z-[4]")}
           >
-            Learn more
+            사용법 알아보기
           </Link>
         </div>
       </div>

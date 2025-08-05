@@ -59,7 +59,7 @@ export const LandingHeroSection = ({ className }: { className?: string }) => {
                 "text-gray-900 dark:text-gray-0",
               )}
             >
-              Open-source Retool for Enterprise
+              Build your AI team yourself
             </h1>
             <p
               className={clsx(
@@ -69,8 +69,8 @@ export const LandingHeroSection = ({ className }: { className?: string }) => {
                 "landing-xs:max-w-[384px]",
               )}
             >
-              Build React-based internal tools, admin panels, dashboards & B2B
-              apps with unmatched flexibility.
+              AI를 어려워하는 사람들에게 슈퍼파워를 제공합니다. 
+              Everyone, Everywhere, EveryAI로 당신의 업무를 혁신하세요.
             </p>
           </div>
           <div
@@ -105,7 +105,7 @@ export const LandingHeroSection = ({ className }: { className?: string }) => {
             >
               <LandingStartActionIcon />
               <span className={clsx("text-base", "font-semibold")}>
-                See Docs
+                시작하기
               </span>
             </Link>
             <LandingCopyCommandButton

@@ -18,20 +18,21 @@ import { LandingTestimonial } from "../refine-theme/landing-testimonial";
 import { LandingAiHeroSection } from "../refine-theme/landing-ai-hero-section";
 
 function Home() {
-  const title = "Refine | Open-source Retool for Enterprise";
+  const title = "SowonAI | Build your AI team yourself";
   return (
     <>
       <Head>
         <html data-active-page="index" />
         <title>{title}</title>
         <meta property="og:title" content={title} />
+        <meta property="og:description" content="AI를 어려워하는 사람들에게 슈퍼파워를 제공합니다. 개발자 없이도 직접 AI 팀을 구축하고 업무를 자동화하세요." />
         <link
           rel="preload"
-          href="https://refine.new/embed-form"
+          href="https://sowonai.com/embed-form"
           as="document"
         />
       </Head>
-      <CommonLayout description="Build React-based internal tools, admin panels, dashboards & B2B apps with unmatched flexibility.">
+      <CommonLayout description="AI를 어려워하는 사람들에게 슈퍼파워를 제공합니다. 개발자 없이도 직접 AI 팀을 구축하고 업무를 자동화하세요.">
         <div className={clsx()}>
           <CommonHeader />
           <div

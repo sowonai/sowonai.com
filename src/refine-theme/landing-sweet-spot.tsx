@@ -57,7 +57,7 @@ export const LandingSweetSpot: FC<Props> = ({ className }) => {
             "dark:text-gray-0 text-gray-900",
           )}
         >
-          The{" "}
+          기술적 장벽 없이{" "}
           <span
             className={clsx(
               "font-semibold",
@@ -65,9 +65,9 @@ export const LandingSweetSpot: FC<Props> = ({ className }) => {
               "text-refine-indigo drop-shadow-[0_0_30px_rgba(51,51,255,0.3)]",
             )}
           >
-            sweet spot
+            AI 슈퍼파워
           </span>{" "}
-          between low-code and full-code.
+          를 획득하세요.
         </h2>
         <p
           className={clsx(
@@ -77,9 +77,8 @@ export const LandingSweetSpot: FC<Props> = ({ className }) => {
             "dark:text-gray-400 text-gray-600",
           )}
         >
-          Drag-and-drop tools shine initially but collapse under the weight of
-          complexity. Refine offers comparable speed at the start and infinite
-          scaling in the long run.
+          복잡한 개발 없이도 강력한 AI 시스템을 구축할 수 있습니다. 
+          SowonAI는 간단한 시작과 무한한 확장성을 동시에 제공합니다.
         </p>
       </div>
 
