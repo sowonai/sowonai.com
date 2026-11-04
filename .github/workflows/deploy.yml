@@ -34,40 +34,20 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
 
-      - name: Complete clean install
-        run: |
-          # 모든 캐시와 파일들 완전 삭제
-          rm -rf node_modules
-          rm -rf package-lock.json
-          rm -rf .docusaurus
-          rm -rf build
-          rm -rf temp_drafts
-          # npm 캐시도 클리어
-          npm cache clean --force
-          # 새로 설치
-          npm install
-
-      - name: Clear Docusaurus cache
-        run: npm run clear
-
-      - name: Build plugins
-        run: npm run build:plugins
-
-      - name: Build website
-        run: npm run build
+      # 빌드 없는 정적 사이트: site/ 를 그대로 올린다. 올리기 전에 링크·문구·목업 흔적을 점검한다.
+      - name: Check site
+        run: node scripts/check-site.mjs
 
       - name: Upload Build Artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: build
+          path: site
 
   deploy:
     name: Deploy to GitHub Pages

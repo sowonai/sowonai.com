@@ -1,25 +1,8 @@
-# Dependencies
-/node_modules
-
-# Production
-/build
-
-# Generated files
-.docusaurus
-.cache-loader
-
-# Temporary drafts
-temp_drafts/
-
 # Misc
 .DS_Store
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
 
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
+# 빌드 없는 사이트 — 의존성·생성물·로컬 편집기 설정이 생겨도 실수로 커밋하지 않도록
+node_modules/
+.docusaurus/
 package-lock.json
+.vscode/
