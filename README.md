@@ -8,7 +8,6 @@
 site/
   index.html            본문 한 장 (HTML + CSS + JS 한 파일, 외부 요청 0)
   404.html
-  privacy-policy/       app.sowonai.com/privacy 로 보내는 페이지
   assets/               로고 2개, og.png
   favicon.ico  CNAME  robots.txt  sitemap.xml
 scripts/
