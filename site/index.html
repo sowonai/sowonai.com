@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SowonAI — AI superpowers, for everyone</title>
+<meta name="description" content="SowonAI builds a family of products that let anyone make software with the AI they already use, share it, and help each other.">
+<link rel="canonical" href="https://www.sowonai.com/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.sowonai.com/">
+<meta property="og:title" content="SowonAI — AI superpowers, for everyone">
+<meta property="og:description" content="SowonAI builds a family of products that let anyone make software with the AI they already use, share it, and help each other.">
+<meta property="og:image" content="https://www.sowonai.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<meta name="theme-color" content="#f8fafc">
+<style>
+  :root {
+    --bg: #f8fafc; --ink: #0f172a; --ink-2: #334155; --muted: #64748b; --line: #e2e8f0; --card: #fff;
+    --blue: #2f6fe8; --blue-2: #1d4ed8; --blue-soft: #e8f0ff; --blue-mist: #f3f7ff;
+    --green: #15803d; --green-bg: #e7f6ec; --amber: #b45309; --amber-bg: #fff4e0;
+    --radius: 20px; --shadow: 0 1px 2px rgba(15,23,42,.04), 0 16px 40px rgba(15,23,42,.08);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", Roboto, sans-serif; background: var(--bg); color: var(--ink); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; text-decoration: none; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+  h1, h2, h3, h4 { margin: 0; letter-spacing: -0.02em; }
+  h2 { font-size: clamp(28px, 3.4vw, 40px); line-height: 1.15; font-weight: 800; }
+  section { padding: 88px 0; }
+  .eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--blue); }
+  .eyebrow::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--blue); }
+  .lede { color: var(--ink-2); font-size: 18px; max-width: 620px; }
+  .btn { display: inline-flex; align-items: center; gap: 8px; height: 46px; padding: 0 20px; border-radius: 12px; font-weight: 650; font-size: 15px; border: 1px solid var(--line); background: #fff; color: var(--ink); font-family: inherit; }
+  .btn.primary { background: var(--blue); border-color: var(--blue); color: #fff; box-shadow: 0 8px 22px rgba(47,111,232,.26); }
+  .pill { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 700; padding: 4px 10px; border-radius: 999px; white-space: nowrap; }
+  .pill::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+  .pill.live { background: var(--green-bg); color: var(--green); }
+  .pill.soon { background: var(--amber-bg); color: var(--amber); }
+
+  /* ---------- nav ---------- */
+  nav.top { position: sticky; top: 0; z-index: 10; background: rgba(248,250,252,.88); backdrop-filter: saturate(1.4) blur(10px); border-bottom: 1px solid rgba(226,232,240,.7); }
+  nav.top .wrap { display: flex; align-items: center; height: 64px; gap: 28px; }
+  .logo { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 20px; letter-spacing: -0.02em; }
+  .logo img { width: 30px; height: 30px; object-fit: contain; }
+  nav.top .links { display: flex; gap: 26px; font-size: 14.5px; color: var(--ink-2); }
+  nav.top .links a:hover { color: var(--blue); }
+  nav.top .spacer { flex: 1; }
+  .lang { display: inline-flex; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; background: #fff; }
+  .lang button { border: 0; background: transparent; padding: 7px 10px; font: inherit; font-size: 12.5px; font-weight: 700; color: var(--muted); cursor: pointer; }
+  .lang button.on { background: var(--ink); color: #fff; }
+  @media (max-width: 720px) { nav.top .links { display: none; } }
+
+  /* ---------- hero ---------- */
+  .hero { padding: 84px 0 80px; background: radial-gradient(1100px 520px at 80% -10%, #dfe9ff 0%, rgba(223,233,255,0) 60%), radial-gradient(760px 380px at 0% 0%, #eef4ff 0%, rgba(238,244,255,0) 60%); }
+  .hero .wrap { display: grid; grid-template-columns: 1fr minmax(0, 470px); gap: 56px; align-items: center; }
+  .hero h1 { font-size: clamp(40px, 5.4vw, 64px); line-height: 1.05; font-weight: 850; margin-top: 14px; }
+  .hero h1 em { font-style: normal; color: var(--blue); }
+  .hero .lede { margin: 22px 0 28px; font-size: 19px; }
+  .hero .ctas { display: flex; flex-wrap: wrap; gap: 12px; }
+  @media (max-width: 960px) { .hero .wrap { grid-template-columns: minmax(0, 1fr); } }
+
+  .eco { background: #fff; border: 1px solid var(--line); border-radius: 24px; box-shadow: var(--shadow); padding: 18px 18px 14px; }
+  .eco svg { display: block; width: 100%; height: auto; }
+  .eco-fig { position: relative; }
+  /* CrewX logo over the diagram as a plain <img> (x156 y44 22x22 of the 440x390 viewBox) so the HTML Viewer can load it */
+  .eco-fig .eco-logo { position: absolute; left: 35.4545%; top: 11.2821%; width: 5%; height: auto; }
+  .eco .cap { text-align: center; font-size: 12.5px; color: var(--muted); margin-top: 4px; }
+  .eco text { font-family: inherit; }
+
+  /* ---------- products ---------- */
+  .products .head { display: flex; justify-content: space-between; align-items: end; gap: 24px; flex-wrap: wrap; }
+  .products .grid { margin-top: 40px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+  .prod { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; box-shadow: var(--shadow); display: flex; flex-direction: column; }
+  .prod .top { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+  .prod .ic { width: 48px; height: 48px; border-radius: 14px; display: grid; place-items: center; background: var(--blue-soft); color: var(--blue-2); flex: none; }
+  .prod .ic img { width: 30px; height: 30px; object-fit: contain; }
+  .prod .ic svg { width: 26px; height: 26px; }
+  .prod h3 { margin: 20px 0 4px; font-size: 22px; font-weight: 850; }
+  .prod .role { font-size: 13px; font-weight: 700; color: var(--blue); letter-spacing: .04em; text-transform: uppercase; }
+  .prod .tag { margin: 12px 0 8px; font-size: 17px; font-weight: 700; line-height: 1.4; }
+  .prod p { margin: 0; color: var(--ink-2); font-size: 15px; }
+  .prod .foot { margin-top: auto; padding-top: 24px; display: flex; justify-content: space-between; align-items: center; gap: 10px; border-top: 1px solid var(--line); margin-top: 24px; }
+  .prod .foot .url { font-size: 13px; color: var(--muted); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+  .prod .foot a { font-weight: 700; font-size: 14.5px; color: var(--blue-2); }
+  .prod .foot .off { font-weight: 600; font-size: 14px; color: var(--muted); }
+  .products .note { margin-top: 22px; font-size: 14px; color: var(--muted); display: flex; align-items: center; gap: 8px; }
+  @media (max-width: 960px) { .products .grid { grid-template-columns: minmax(0, 1fr); } }
+
+  /* ---------- approach ---------- */
+  .approach { background: var(--ink); color: #e2e8f0; }
+  .approach h2 { color: #fff; }
+  .approach .eyebrow { color: #93b4ff; }
+  .approach .eyebrow::before { background: #93b4ff; }
+  .approach .grid { margin-top: 40px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; border-top: 1px solid rgba(255,255,255,.12); }
+  .ap { padding: 26px 28px 4px 0; }
+  .ap + .ap { padding-left: 28px; border-left: 1px solid rgba(255,255,255,.12); }
+  .ap h3 { font-size: 22px; color: #fff; }
+  .ap p { margin: 8px 0 0; font-size: 15px; color: #cbd5e1; }
+  @media (max-width: 860px) { .approach .grid { grid-template-columns: minmax(0, 1fr); } .ap, .ap + .ap { padding: 22px 0 6px; border-left: 0; border-top: 1px solid rgba(255,255,255,.12); } .ap:first-child { border-top: 0; } }
+
+  /* ---------- about ---------- */
+  .about .wrap { display: grid; grid-template-columns: 1.1fr .9fr; gap: 56px; align-items: start; }
+  .about blockquote { margin: 22px 0 0; padding: 0 0 0 18px; border-left: 3px solid var(--blue); font-size: 21px; line-height: 1.5; color: var(--ink); font-weight: 650; }
+  .about .facts { display: grid; gap: 10px; }
+  .about .fact { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 15px 18px; display: grid; grid-template-columns: 110px minmax(0, 1fr); gap: 12px; font-size: 14.5px; }
+  .about .fact b { color: var(--muted); font-weight: 650; font-size: 13px; }
+  @media (max-width: 860px) { .about .wrap { grid-template-columns: minmax(0, 1fr); } }
+  @media (max-width: 480px) { .about .fact { grid-template-columns: 84px minmax(0, 1fr); } }
+
+  footer { border-top: 1px solid var(--line); padding: 40px 0 48px; font-size: 14px; color: var(--muted); background: #fff; }
+  footer .wrap { display: grid; grid-template-columns: 1.4fr repeat(2, 1fr); gap: 28px; }
+  footer h5 { margin: 0 0 10px; font-size: 13px; color: var(--ink); }
+  footer a { display: block; margin: 6px 0; }
+  footer a:hover { color: var(--blue); }
+  footer .legal { grid-column: 1 / -1; padding-top: 20px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; font-size: 13px; }
+  @media (max-width: 640px) { footer .wrap { grid-template-columns: 1fr 1fr; } footer .wrap > div:first-child { grid-column: 1 / -1; } }
+</style>
+</head>
+<body>
+
+<nav class="top">
+  <div class="wrap">
+    <a class="logo" href="/"><img src="assets/sowonai-logo.png" alt="">SowonAI</a>
+    <div class="links">
+      <a href="#products" data-ko="제품">Products</a>
+      <a href="#approach" data-ko="방향">Approach</a>
+      <a href="#about" data-ko="소개">About</a>
+    </div>
+    <div class="spacer"></div>
+    <div class="lang" role="group" aria-label="Language">
+      <button class="on" data-lang="en">EN</button><button data-lang="ko">KO</button>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== Hero ===== -->
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">SowonAI</div>
+      <h1 data-ko-html="모두에게<br><em>AI 슈퍼파워</em>를.">AI superpowers,<br><em>for everyone.</em></h1>
+      <p class="lede" data-ko="SowonAI는 누구나 이미 쓰는 AI로 자기에게 맞는 소프트웨어를 만들고, 나누고, 서로 돕게 하는 제품들을 만듭니다.">SowonAI builds a family of products that let anyone make software with the AI they already use, share it, and help each other.</p>
+      <div class="ctas">
+        <a class="btn primary" href="#products" data-ko="제품 보기">Our products</a>
+        <a class="btn" href="https://www.crewx.dev" data-ko="CrewX 방문 →">Visit CrewX →</a>
+      </div>
+    </div>
+
+    <div class="eco" aria-label="How SowonAI products fit together">
+      <div class="eco-fig">
+      <img class="eco-logo" src="assets/crewx-logo.png" alt="">
+      <svg viewBox="0 0 440 390" role="img">
+        <defs>
+          <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0,0 L10,5 L0,10 z" fill="#2f6fe8"/>
+          </marker>
+        </defs>
+        <!-- spokes -->
+        <g stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="4 5">
+          <line x1="220" y1="150" x2="220" y2="110"/>
+          <line x1="168" y1="232" x2="128" y2="292"/>
+          <line x1="272" y1="232" x2="312" y2="292"/>
+        </g>
+        <!-- cycle arrows: CrewX → Marketplace → Community → CrewX -->
+        <g fill="none" stroke="#2f6fe8" stroke-width="2.2" stroke-linecap="round">
+          <path d="M140 64 C 68 86, 40 190, 68 284" marker-end="url(#ah)"/>
+          <path d="M190 352 C 206 378, 234 378, 250 352" marker-end="url(#ah)"/>
+          <path d="M372 284 C 400 190, 372 86, 300 64" marker-end="url(#ah)"/>
+        </g>
+        <!-- hub -->
+        <circle cx="220" cy="196" r="58" fill="#0f172a"/>
+        <text x="220" y="192" text-anchor="middle" fill="#fff" font-size="17" font-weight="800">SowonAI</text>
+        <text x="220" y="214" text-anchor="middle" fill="#cbd5e1" font-size="12" data-ko="하나의 계정">One account</text>
+        <!-- CrewX -->
+        <rect x="140" y="30" width="160" height="78" rx="16" fill="#e8f0ff" stroke="#bcd0fb"/>
+        <text x="184" y="61" fill="#0f172a" font-size="16" font-weight="800">CrewX</text>
+        <text x="220" y="91" text-anchor="middle" fill="#1d4ed8" font-size="12.5" font-weight="700" data-ko="만든다">Make</text>
+        <!-- Marketplace -->
+        <rect x="20" y="292" width="164" height="78" rx="16" fill="#e8f0ff" stroke="#bcd0fb"/>
+        <text x="102" y="323" text-anchor="middle" fill="#0f172a" font-size="16" font-weight="800" data-ko="마켓플레이스">Marketplace</text>
+        <text x="102" y="353" text-anchor="middle" fill="#1d4ed8" font-size="12.5" font-weight="700" data-ko="나누고 찾는다">Share &amp; discover</text>
+        <!-- Community -->
+        <rect x="256" y="292" width="164" height="78" rx="16" fill="#fff" stroke="#bcd0fb" stroke-dasharray="5 4"/>
+        <text x="338" y="323" text-anchor="middle" fill="#0f172a" font-size="16" font-weight="800" data-ko="커뮤니티">Community</text>
+        <text x="338" y="353" text-anchor="middle" fill="#1d4ed8" font-size="12.5" font-weight="700" data-ko="사람을 만난다">Connect</text>
+      </svg>
+      </div>
+      <div class="cap" data-ko="만든 것이 퍼지고, 퍼진 곳에서 사람이 모이고, 모인 사람이 다시 만듭니다.">What people make spreads, people gather around it, and they make more.</div>
+    </div>
+  </div>
+</header>
+
+<!-- ===== Products ===== -->
+<section class="products" id="products">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <div class="eyebrow" data-ko="제품">Products</div>
+        <h2 style="margin-top:12px" data-ko="만들고, 나누고, 만나는 세 가지 제품.">Three products. Make, share, connect.</h2>
+      </div>
+    </div>
+
+    <div class="grid">
+      <article class="prod">
+        <div class="top">
+          <div class="ic"><img src="assets/crewx-logo.png" alt=""></div>
+          <span class="pill live" data-ko="출시">Available</span>
+        </div>
+        <h3>CrewX</h3>
+        <div class="role" data-ko="만든다">Make</div>
+        <div class="tag" data-ko="내 AI로 앱을 만들고, 친구에게 공유해요.">Build an app with your AI. Share it with your friends.</div>
+        <p data-ko="이미 쓰는 Claude·ChatGPT·Gemini와 대화하며 내 사정에 맞는 작은 앱을 만드는 데스크톱 앱. 코딩은 필요 없어요.">A desktop app where anyone makes small apps that fit their own life by chatting with the Claude, ChatGPT or Gemini they already use. No coding.</p>
+        <div class="foot">
+          <span class="url">crewx.dev</span>
+          <a href="https://www.crewx.dev" data-ko="자세히 →">Learn more →</a>
+        </div>
+      </article>
+
+      <article class="prod">
+        <div class="top">
+          <div class="ic">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l1.5-5h15L21 9"/><path d="M3 9h18v2a3 3 0 0 1-6 0 3 3 0 0 1-6 0 3 3 0 0 1-6 0z"/><path d="M5 13v7h14v-7"/><path d="M10 20v-4h4v4"/></svg>
+          </div>
+          <span class="pill live" data-ko="CrewX 안에서 운영 중">Live in CrewX</span>
+        </div>
+        <h3 data-ko="CrewX 마켓플레이스">CrewX Marketplace</h3>
+        <div class="role" data-ko="나누고 찾는다">Share &amp; discover</div>
+        <div class="tag" data-ko="앱이 필요한 사람을 만나는 곳.">Where apps find the people who need them.</div>
+        <p data-ko="남이 만든 앱을 둘러보고 바로 설치하거나, 내가 만든 앱을 올려 더 많은 사람에게 닿게 해요.">Browse and install apps other people made, or publish your own so it reaches more people.</p>
+        <div class="foot">
+          <span class="url" data-ko="CrewX 앱 안">inside the CrewX app</span>
+          <a href="https://www.crewx.dev" data-ko="자세히 →">Learn more →</a>
+        </div>
+      </article>
+
+      <article class="prod">
+        <div class="top">
+          <div class="ic">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/><path d="M8.5 11h.01M12 11h.01M15.5 11h.01"/></svg>
+          </div>
+          <span class="pill soon" data-ko="곧 공개">Coming soon</span>
+        </div>
+        <h3 data-ko="SowonAI 커뮤니티">SowonAI Community</h3>
+        <div class="role" data-ko="사람을 만난다">Connect</div>
+        <div class="tag" data-ko="막히면 묻고, 만들면 자랑하고, 서로 돕는 곳.">Ask when you're stuck. Show what you made. Help each other.</div>
+        <p data-ko="해결된 답과 그 답이 된 앱이 기록으로 남아요. CrewX 안에서도, 웹에서도 같은 곳입니다.">Solved answers — and the apps behind them — stay on record. The same place from inside CrewX or on the web.</p>
+        <div class="foot">
+          <span class="url">community.sowonai.com</span>
+          <span class="off" data-ko="준비 중">Coming soon</span>
+        </div>
+      </article>
+    </div>
+
+    <div class="note">🔑 <span data-ko="모든 제품은 SowonAI 계정 하나로 이어집니다.">Every product runs on one SowonAI account.</span></div>
+  </div>
+</section>
+
+<!-- ===== Approach ===== -->
+<section class="approach" id="approach">
+  <div class="wrap">
+    <div class="eyebrow" data-ko="방향">Approach</div>
+    <h2 style="margin-top:12px" data-ko="모든 사람이, 모든 곳에서, 모든 AI를.">Everyone. Everywhere. Every AI.</h2>
+    <div class="grid">
+      <div class="ap">
+        <h3 data-ko="모든 사람">Everyone</h3>
+        <p data-ko="코딩을 몰라도 됩니다. 원하는 걸 말하면 AI가 만들어요.">No coding. Describe what you want and your AI builds it.</p>
+      </div>
+      <div class="ap">
+        <h3 data-ko="모든 곳">Everywhere</h3>
+        <p data-ko="내 컴퓨터에서 만들고, 친구의 컴퓨터와 휴대폰에서도 열립니다.">Made on your computer. Opens on your friends' computers and phones.</p>
+      </div>
+      <div class="ap">
+        <h3 data-ko="모든 AI">Every AI</h3>
+        <p data-ko="새 AI 구독을 팔지 않아요. 이미 쓰는 Claude·ChatGPT·Gemini를 연결합니다.">We don't sell another AI subscription. Bring the Claude, ChatGPT or Gemini you already have.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== About ===== -->
+<section class="about" id="about">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow" data-ko="소개">About</div>
+      <h2 style="margin-top:12px" data-ko="AI가 어려운 사람을 위해.">For people who find AI hard.</h2>
+      <blockquote data-ko="AI를 어려워하는 사람들을 찾아서, 그들이 슈퍼파워를 가질 수 있도록 돕습니다.">We find the people who find AI hard — and help them unleash their AI superpowers.</blockquote>
+    </div>
+    <div class="facts">
+      <div class="fact"><b data-ko="브랜드">Brand</b><span data-ko="SowonAI — AI 제품군">SowonAI — a family of AI products</span></div>
+      <div class="fact"><b data-ko="제품">Products</b><span data-ko="CrewX · CrewX 마켓플레이스 · 커뮤니티(곧 공개)">CrewX · CrewX Marketplace · Community (soon)</span></div>
+      <div class="fact"><b data-ko="회사">Company</b><span>SowonLabs</span></div>
+      <div class="fact"><b data-ko="연락">Contact</b><span>support@sowonai.com</span></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <a class="logo" href="/" style="margin:0 0 10px"><img src="assets/sowonai-logo.png" alt="">SowonAI</a>
+      <div data-ko="모든 사람이, 모든 곳에서, 모든 AI를.">Everyone, Everywhere, Every AI.</div>
+    </div>
+    <div>
+      <h5 data-ko="제품">Products</h5>
+      <a href="https://www.crewx.dev">CrewX</a>
+      <a href="https://www.crewx.dev" data-ko="마켓플레이스">Marketplace</a>
+      <a href="#products" data-ko="커뮤니티 (곧 공개)">Community (soon)</a>
+    </div>
+    <div>
+      <h5 data-ko="회사">Company</h5>
+      <a href="https://www.sowonlabs.com">SowonLabs</a>
+      <a href="https://app.sowonai.com/privacy" data-ko="개인정보 처리방침">Privacy</a>
+    </div>
+    <div class="legal">
+      <span>© 2026 SowonLabs. SowonAI and CrewX are products of SowonLabs.</span>
+      <span>www.sowonai.com</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // EN/KO toggle: swaps text from data-ko / data-ko-html, keeps the English original.
+  // Start language: ?lang=ko|en, else the saved choice (localStorage), else English. No browser-language detection.
+  const LANG_KEY = 'sowonai-lang';
+  const nodes = document.querySelectorAll('[data-ko],[data-ko-html]');
+  nodes.forEach(n => { n.dataset.en = n.innerHTML; });
+  const pick = v => (v === 'ko' || v === 'en') ? v : null;
+  function setLang(lang) {
+    document.documentElement.lang = lang;
+    nodes.forEach(n => {
+      if (lang === 'ko') {
+        if (n.dataset.koHtml) n.innerHTML = n.dataset.koHtml; else n.textContent = n.dataset.ko;
+      } else n.innerHTML = n.dataset.en;
+    });
+    document.querySelectorAll('.lang button').forEach(b => b.classList.toggle('on', b.dataset.lang === lang));
+  }
+  function saved() { try { return localStorage.getItem(LANG_KEY); } catch (e) { return null; } }
+  const start = pick(new URLSearchParams(location.search).get('lang')) || pick(saved()) || 'en';
+  if (start !== 'en') setLang(start);
+  document.querySelectorAll('.lang button').forEach(b => b.addEventListener('click', () => {
+    const lang = b.dataset.lang;
+    setLang(lang);
+    try { localStorage.setItem(LANG_KEY, lang); } catch (e) { /* storage blocked: keep working without memory */ }
+    // If the address has ?lang=, keep it in step with the choice so a reload does not flip it back.
+    const url = new URL(location.href);
+    if (url.searchParams.has('lang')) { url.searchParams.set('lang', lang); history.replaceState(null, '', url); }
+  }));
+</script>
+</body>
+</html>
