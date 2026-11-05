@@ -8,7 +8,7 @@
 site/
   index.html            본문 한 장 (HTML + CSS + JS 한 파일, 외부 요청 0)
   404.html
-  assets/               로고 2개, og.png
+  assets/               로고 2개, og.png, 탭·터치 아이콘(CrewX) 2개
   favicon.ico  CNAME  robots.txt  sitemap.xml
 scripts/
   check-site.mjs        점검 (CI와 같은 명령)
