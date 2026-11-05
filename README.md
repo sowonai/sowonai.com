@@ -8,8 +8,8 @@
 site/
   index.html            본문 한 장 (HTML + CSS + JS 한 파일, 외부 요청 0)
   404.html
-  assets/               로고 2개, og.png, 탭·터치 아이콘(CrewX) 2개
-  favicon.ico  CNAME  robots.txt  sitemap.xml
+  assets/               로고 2개, og.png, 탭·터치 아이콘 3개(sowonai-favicon.ico, sowonai-logo-mark.svg, sowonai-apple-touch-icon.png — sowonlabs.com과 같은 파란 큐브)
+  favicon.ico  CNAME  robots.txt  sitemap.xml   (favicon.ico = 기본 경로 대비용, 위 sowonai-favicon.ico와 같은 바이트)
 scripts/
   check-site.mjs        점검 (CI와 같은 명령)
   make-og.mjs           og.png 다시 만들 때만 (Playwright 필요, 아래 참고)
